@@ -1,0 +1,97 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "C++ Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/cpp/reverse_nodes_in_k_group_with_constraints/reverse_nodes_in_k_group_with_constraints.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/cpp/reverse_nodes_in_k_group_with_constraints",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C++: g++ build active file"
+        },
+        {
+            "name": "Rust Debug",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/rust/reverse_nodes_in_k_group_with_constraints/target/debug/reverse_nodes_in_k_group_with_constraints",
+            "args": [],
+            "cwd": "${workspaceFolder}/rust/reverse_nodes_in_k_group_with_constraints",
+            "stopOnEntry": false,
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "preLaunchTask": "Rust: cargo build"
+        },
+        {
+            "name": "Go Debug",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/go/reverse_nodes_in_k_group_with_constraints",
+            "cwd": "${workspaceFolder}/go/reverse_nodes_in_k_group_with_constraints",
+            "env": {},
+            "args": [],
+            "showLog": true
+        },
+        {
+            "name": "Python Debug",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/python/reverse_nodes_in_k_group_with_constraints/reverse_nodes_in_k_group_with_constraints.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/python/reverse_nodes_in_k_group_with_constraints",
+            "args": [],
+            "justMyCode": true
+        },
+        {
+            "name": "TypeScript Debug",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/typescript/reverse_nodes_in_k_group_with_constraints/reverse_nodes_in_k_group_with_constraints.js",
+            "cwd": "${workspaceFolder}/typescript/reverse_nodes_in_k_group_with_constraints",
+            "args": [],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "preLaunchTask": "TypeScript: tsc build"
+        },
+        {
+            "name": "TypeScript Debug (ts-node)",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/node_modules/ts-node/dist/bin.js",
+            "args": [
+                "${workspaceFolder}/typescript/reverse_nodes_in_k_group_with_constraints/reverse_nodes_in_k_group_with_constraints.ts"
+            ],
+            "cwd": "${workspaceFolder}/typescript/reverse_nodes_in_k_group_with_constraints",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "env": {
+                "TS_NODE_PROJECT": "${workspaceFolder}/typescript/reverse_nodes_in_k_group_with_constraints/tsconfig.json"
+            }
+        },
+        {
+            "name": "Lua Debug",
+            "type": "lua-local",
+            "request": "launch",
+            "program": {
+                "lua": "lua",
+                "file": "${workspaceFolder}/lua/reverse_nodes_in_k_group_with_constraints/reverse_nodes_in_k_group_with_constraints.lua"
+            },
+            "cwd": "${workspaceFolder}/lua/reverse_nodes_in_k_group_with_constraints",
+            "args": []
+        }
+    ]
+}

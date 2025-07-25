@@ -1,0 +1,204 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C++: g++ build active file",
+            "type": "cppbuild",
+            "command": "g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-std=c++17",
+                "-Wall",
+                "-Wextra",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "编译器: g++"
+        },
+        {
+            "label": "C++: clang++ build active file",
+            "type": "cppbuild",
+            "command": "clang++",
+            "args": [
+                "-fcolor-diagnostics",
+                "-fansi-escape-codes",
+                "-g",
+                "-std=c++17",
+                "-Wall",
+                "-Wextra",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "编译器: clang++"
+        },
+        {
+            "label": "Rust: cargo build",
+            "type": "shell",
+            "command": "cargo",
+            "args": [
+                "build"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/rust/reverse_nodes_in_k_group_with_constraints"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "detail": "Rust cargo build"
+        },
+        {
+            "label": "Rust: cargo run",
+            "type": "shell",
+            "command": "cargo",
+            "args": [
+                "run"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/rust/reverse_nodes_in_k_group_with_constraints"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "detail": "Rust cargo run"
+        },
+        {
+            "label": "Go: build",
+            "type": "shell",
+            "command": "go",
+            "args": [
+                "build",
+                "-v",
+                "."
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/go/reverse_nodes_in_k_group_with_constraints"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$go"
+            ],
+            "detail": "Go build"
+        },
+        {
+            "label": "Go: run",
+            "type": "shell",
+            "command": "go",
+            "args": [
+                "run",
+                "."
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/go/reverse_nodes_in_k_group_with_constraints"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$go"
+            ],
+            "detail": "Go run"
+        },
+        {
+            "label": "TypeScript: tsc build",
+            "type": "shell",
+            "command": "tsc",
+            "args": [
+                "${file}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$tsc"
+            ],
+            "detail": "TypeScript compiler"
+        },
+        {
+            "label": "TypeScript: ts-node run",
+            "type": "shell",
+            "command": "ts-node",
+            "args": [
+                "${file}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            },
+            "problemMatcher": [],
+            "detail": "TypeScript ts-node runner"
+        },
+        {
+            "label": "Python: run current file",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "${file}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            },
+            "problemMatcher": [],
+            "detail": "Python interpreter"
+        },
+        {
+            "label": "Lua: run current file",
+            "type": "shell",
+            "command": "lua",
+            "args": [
+                "${file}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            },
+            "problemMatcher": [],
+            "detail": "Lua interpreter"
+        }
+    ]
+}

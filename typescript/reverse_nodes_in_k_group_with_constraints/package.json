@@ -1,0 +1,28 @@
+{
+  "name": "reverse-nodes-in-k-group-with-constraints",
+  "version": "1.0.0",
+  "description": "Hard level linked list algorithm: Reverse Nodes in k-Group with Constraints",
+  "main": "reverse_nodes_in_k_group_with_constraints.js",
+  "scripts": {
+    "build": "tsc reverse_nodes_in_k_group_with_constraints.ts",
+    "start": "node reverse_nodes_in_k_group_with_constraints.js",
+    "dev": "ts-node reverse_nodes_in_k_group_with_constraints.ts",
+    "test": "jest"
+  },
+  "keywords": [
+    "algorithm",
+    "linked-list",
+    "reverse",
+    "typescript",
+    "hard"
+  ],
+  "author": "Algorithm Learning Project",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0",
+    "jest": "^29.0.0",
+    "@types/jest": "^29.0.0"
+  }
+}
