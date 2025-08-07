@@ -199,6 +199,23 @@
             },
             "problemMatcher": [],
             "detail": "Lua interpreter"
+        },
+        {
+            "label": "LuaPanda: run with debug",
+            "type": "shell",
+            "command": "lua",
+            "args": [
+                "${workspaceFolder}/linked_list/reverse/lua/reverse_k_group_with_luapanda.lua"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/linked_list/reverse/lua"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            },
+            "problemMatcher": [],
+            "detail": "Run Lua with LuaPanda debugger"
         }
     ]
 }

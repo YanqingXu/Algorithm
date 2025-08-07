@@ -9,7 +9,7 @@
     "C_Cpp.suggestSnippets": true,
     
     // Python 配置
-    "python.defaultInterpreterPath": "python",
+    "python.defaultInterpreterPath": "D:\\python\\python.exe",
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": true,
     "python.formatting.provider": "black",
@@ -45,6 +45,15 @@
     "Lua.diagnostics.globals": ["vim"],
     "Lua.workspace.checkThirdParty": false,
     "Lua.telemetry.enable": false,
+    // LuaPanda 配置
+    "luapanda.luaFileExtension": ".lua",
+    "luapanda.connectionPort": 8818,
+    "luapanda.logLevel": 1,
+    "luapanda.packagePath": [
+        "${workspaceFolder}/linked_list/reverse/lua"
+    ],
+    "luapanda.useCHook": true,
+    "luapanda.autoPathMode": true,
     
     // 通用编辑器配置
     "editor.tabSize": 4,
@@ -141,5 +150,7 @@
     },
     "[lua]": {
         "editor.formatOnSave": true
-    }
+    },
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "python-envs.pythonProjects": []
 }

@@ -30,9 +30,6 @@
             "args": [],
             "cwd": "${workspaceFolder}/linked_list/reverse/rust",
             "stopOnEntry": false,
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb",
             "preLaunchTask": "Rust: cargo run reverse k group"
         },
         {
@@ -48,13 +45,21 @@
         },
         {
             "name": "Python Debug",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/linked_list/reverse/python/reverse_k_group_with_constraints.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/linked_list/reverse/python",
-            "args": [],
-            "justMyCode": true
+            "python": "D:\\python\\python.exe"
+        },
+        {
+            "name": "Python Debug Test",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/linked_list/reverse/python/debug_test.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/linked_list/reverse/python",
+            "python": "D:\\python\\python.exe"
         },
         {
             "name": "TypeScript Debug",
@@ -93,15 +98,17 @@
             ]
         },
         {
-            "name": "Lua Debug",
-            "type": "node",
+            "type": "lua",
             "request": "launch",
-            "program": "lua",
-            "args": [
-                "${workspaceFolder}/linked_list/reverse/lua/reverse_k_group_with_constraints.lua"
-            ],
-            "cwd": "${workspaceFolder}/linked_list/reverse/lua",
-            "console": "integratedTerminal"
+            "tag": "independent_file",
+            "name": "LuaPanda-IndependentFile",
+            "description": "独立文件调试模式,使用前请参考文档",
+            "luaPath": "",
+            "packagePath": [],
+            "luaFileExtension": "",
+            "connectionPort": 8820,
+            "stopOnEntry": true,
+            "useCHook": true
         }
     ]
 }

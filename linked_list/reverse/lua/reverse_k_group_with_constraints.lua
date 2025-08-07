@@ -12,6 +12,11 @@
 时间复杂度: O(n)
 空间复杂度: O(1)
 --]]
+-- 设置UTF-8编码以支持中文输出
+if os.getenv("OS") and string.find(os.getenv("OS"):lower(), "windows") then
+    os.execute("chcp 65001 > nul 2>&1")
+end
+
 -- 链表节点定义
 local ListNode = {}
 ListNode.__index = ListNode
