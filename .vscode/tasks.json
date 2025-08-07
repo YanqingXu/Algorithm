@@ -71,6 +71,25 @@
             "detail": "Rust cargo build - linked_list/reverse"
         },
         {
+            "label": "Rust: cargo build reverse k group",
+            "type": "shell",
+            "command": "cargo",
+            "args": [
+                "build"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/linked_list/reverse/rust"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "detail": "Rust cargo build for debugging - linked_list/reverse"
+        },
+        {
             "label": "Rust: cargo run",
             "type": "shell",
             "command": "cargo",

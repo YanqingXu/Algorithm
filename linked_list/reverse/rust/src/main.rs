@@ -264,18 +264,20 @@ fn run_tests() {
     println!("空间复杂度: O(1)");
     println!();
 
-    // 测试用例1
+    // 测试用例1 - 在这里设置断点
     println!("测试用例1:");
     let head1 = create_list(vec![1, 2, 3, 4, 5, 6]);
     print!("输入: ");
     print_list(&head1);
+
+    // 在这里设置断点 - 算法调用前
     let result1 = Solution::reverse_k_group_with_constraints(head1, 3, 6, 0);
     print!("输出: ");
     print_list(&result1);
     println!("期望: 3 -> 2 -> 1 -> 0 -> 6 -> 5 -> 4");
     println!();
 
-    // 测试用例2
+    // 测试用例2 - 在这里设置断点
     println!("测试用例2:");
     let head2 = create_list(vec![1, 1, 1, 2, 2, 2]);
     print!("输入: ");
@@ -286,7 +288,7 @@ fn run_tests() {
     println!("期望: 1 -> 1 -> 1 -> 9 -> 2 -> 2 -> 2");
     println!();
 
-    // 测试用例3：边界情况
+    // 测试用例3：边界情况 - 在这里设置断点
     println!("测试用例3（边界情况）:");
     let head3 = create_list(vec![5]);
     print!("输入: ");

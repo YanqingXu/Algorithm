@@ -26,11 +26,11 @@
             "name": "Rust Debug",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/linked_list/reverse/rust/target/debug/reverse_k_group_with_constraints",
+            "program": "${workspaceFolder}/linked_list/reverse/rust/target/debug/main.exe",
             "args": [],
             "cwd": "${workspaceFolder}/linked_list/reverse/rust",
             "stopOnEntry": false,
-            "preLaunchTask": "Rust: cargo run reverse k group"
+            "preLaunchTask": "Rust: cargo build reverse k group"
         },
         {
             "name": "Go Debug",
@@ -48,15 +48,6 @@
             "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/linked_list/reverse/python/reverse_k_group_with_constraints.py",
-            "console": "integratedTerminal",
-            "cwd": "${workspaceFolder}/linked_list/reverse/python",
-            "python": "D:\\python\\python.exe"
-        },
-        {
-            "name": "Python Debug Test",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "${workspaceFolder}/linked_list/reverse/python/debug_test.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/linked_list/reverse/python",
             "python": "D:\\python\\python.exe"
