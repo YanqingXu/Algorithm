@@ -110,10 +110,12 @@ class Solution {
      * 检查从当前节点开始是否还有k个节点
      */
     private hasKNodes(node: ListNode | null, k: number): boolean {
-        for (let i = 0; i < k && node; i++) {
+        let count = 0;
+        while (node && count < k) {
             node = node.next;
+            count++;
         }
-        return node !== null || k === 0;
+        return count === k;
     }
 
     /**
@@ -173,6 +175,16 @@ function printList(head: ListNode | null): void {
     console.log(values.length > 0 ? values.join(' -> ') : '(空链表)');
 }
 
+// 辅助函数：链表转字符串
+function listToString(head: ListNode | null): string {
+    const values: string[] = [];
+    while (head) {
+        values.push(head.val.toString());
+        head = head.next;
+    }
+    return values.length > 0 ? values.join(' -> ') : '(空链表)';
+}
+
 // 测试函数
 function runTests(): void {
     const solution = new Solution();
@@ -186,33 +198,27 @@ function runTests(): void {
     // 测试用例1
     console.log('测试用例1:');
     const head1 = createList([1, 2, 3, 4, 5, 6]);
-    process.stdout.write('输入: ');
-    printList(head1);
+    console.log('输入: ', listToString(head1));
     const result1 = solution.reverseKGroupWithConstraints(head1, 3, 6, 0);
-    process.stdout.write('输出: ');
-    printList(result1);
+    console.log('输出: ', listToString(result1));
     console.log('期望: 3 -> 2 -> 1 -> 0 -> 6 -> 5 -> 4');
     console.log();
 
     // 测试用例2
     console.log('测试用例2:');
     const head2 = createList([1, 1, 1, 2, 2, 2]);
-    process.stdout.write('输入: ');
-    printList(head2);
+    console.log('输入: ', listToString(head2));
     const result2 = solution.reverseKGroupWithConstraints(head2, 3, 5, 9);
-    process.stdout.write('输出: ');
-    printList(result2);
+    console.log('输出: ', listToString(result2));
     console.log('期望: 1 -> 1 -> 1 -> 9 -> 2 -> 2 -> 2');
     console.log();
 
     // 测试用例3：边界情况
     console.log('测试用例3（边界情况）:');
     const head3 = createList([5]);
-    process.stdout.write('输入: ');
-    printList(head3);
+    console.log('输入: ', listToString(head3));
     const result3 = solution.reverseKGroupWithConstraints(head3, 1, 3, 0);
-    process.stdout.write('输出: ');
-    printList(result3);
+    console.log('输出: ', listToString(result3));
     console.log('期望: 5');
     console.log();
 }

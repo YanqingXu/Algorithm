@@ -131,14 +131,14 @@
             "detail": "Go run - linked_list/reverse"
         },
         {
-            "label": "TypeScript: tsc build",
+            "label": "TypeScript: tsc build reverse k group",
             "type": "shell",
-            "command": "tsc",
+            "command": "npx",
             "args": [
-                "${file}"
+                "tsc"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${workspaceFolder}/linked_list/reverse/typescript"
             },
             "group": {
                 "kind": "build",
@@ -147,24 +147,24 @@
             "problemMatcher": [
                 "$tsc"
             ],
-            "detail": "TypeScript compiler"
+            "detail": "Build reverse k group with constraints - TypeScript"
         },
         {
-            "label": "TypeScript: ts-node run",
+            "label": "TypeScript: ts-node run reverse k group",
             "type": "shell",
-            "command": "ts-node",
+            "command": "npx",
             "args": [
-                "${file}"
+                "ts-node",
+                "reverse_k_group_with_constraints.ts"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${workspaceFolder}/linked_list/reverse/typescript"
             },
             "group": {
                 "kind": "test",
                 "isDefault": false
             },
-            "problemMatcher": [],
-            "detail": "TypeScript ts-node runner"
+            "detail": "Run reverse k group with constraints - TypeScript (ts-node)"
         },
         {
             "label": "Python: run current file",

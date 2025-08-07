@@ -1,0 +1,216 @@
+# ===========================================
+# Algorithm Project .gitignore
+# ===========================================
+
+# ===== Compiled binaries and executables =====
+*.exe
+*.out
+*.app
+*.dll
+*.so
+*.dylib
+*.o
+*.obj
+*.lib
+*.a
+
+# ===== Language specific build outputs =====
+
+# C/C++
+*.gch
+*.pch
+*.lo
+*.la
+*.al
+.libs
+.deps
+.dirstamp
+
+# Rust
+target/
+**/*.rs.bk
+Cargo.lock
+
+# Go
+# Binaries for programs and plugins
+*.exe~
+*.dll~
+*.so~
+*.dylib~
+bin/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Node.js / TypeScript
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.npm
+.eslintcache
+.yarn-integrity
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.tsbuildinfo
+
+# TypeScript compiled output
+dist/
+lib/
+*.js.map
+*.d.ts.map
+
+# Lua
+luac.out
+
+# ===== Dependency lock files =====
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ===== IDE and Editor files =====
+# Keep .vscode/ for project-specific settings
+# .vscode/
+
+# JetBrains IDEs
+.idea/
+*.swp
+*.swo
+*~
+
+# Vim
+*.swp
+*.swo
+*.un~
+Session.vim
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Visual Studio
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+
+# ===== Operating System files =====
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ===== Temporary and log files =====
+*.log
+*.tmp
+*.temp
+*.bak
+*.backup
+*.cache
+.cache/
+
+# ===== Testing and debugging =====
+*.test
+*.prof
+*.out
+coverage/
+.nyc_output/
+
+# ===== Environment and configuration =====
+.env
+.env.local
+.env.*.local
+config.local.*
+secrets.json
+
+# ===== Documentation build =====
+docs/_build/
+site/
+_site/
+
+# ===== Misc =====
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.dmg
+*.iso

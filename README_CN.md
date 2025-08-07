@@ -119,6 +119,26 @@ Algorithm/
 4. 遵循每种语言的编码约定
 5. 更新相关的README文件
 
+## 项目文件管理
+
+为了保持项目整洁，本项目使用 `.gitignore` 来忽略以下类型的生成文件：
+
+### 自动忽略的文件类型
+- **编译产物**: `*.exe`, `*.out`, `*.o`, `*.a` 等
+- **构建目录**: 
+  - TypeScript: `dist/`, `node_modules/`
+  - Rust: `target/`, `Cargo.lock`
+  - Python: `__pycache__/`, `*.pyc`
+- **依赖锁文件**: `package-lock.json`, `yarn.lock`
+- **IDE临时文件**: 编辑器缓存和临时文件
+- **系统文件**: `.DS_Store`, `Thumbs.db` 等
+
+### 保留的配置文件
+- `.vscode/`: VS Code 项目配置（调试和构建任务）
+- 各语言的配置文件：`package.json`, `tsconfig.json`, `Cargo.toml` 等
+
+这确保了仓库只包含源代码和必要的配置文件，保持代码库的整洁性。
+
 ## 学习资源
 
 - [算法可视化](https://visualgo.net/)

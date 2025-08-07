@@ -1,0 +1,25 @@
+{
+  "name": "reverse-k-group-with-constraints",
+  "version": "1.0.0",
+  "description": "K个一组反转链表（带约束条件）- TypeScript实现",
+  "main": "reverse_k_group_with_constraints.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node reverse_k_group_with_constraints.js",
+    "dev": "ts-node reverse_k_group_with_constraints.ts",
+    "test": "ts-node reverse_k_group_with_constraints.ts"
+  },
+  "keywords": [
+    "algorithm",
+    "linkedlist",
+    "reverse",
+    "typescript"
+  ],
+  "author": "YanqingXu",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  }
+}

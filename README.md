@@ -77,18 +77,37 @@ python3 algorithm.py
 
 ## Repository Structure
 
-Each language directory follows a consistent structure:
+This repository adopts an **algorithm-centric organization structure**, facilitating cross-language learning and comparison:
 
 ```
-language_name/
-├── basic/          # Basic algorithms (sorting, searching)
-├── data_structures/ # Data structure implementations
-├── dynamic_programming/ # DP problems and solutions
-├── graph/          # Graph algorithms
-├── string/         # String manipulation algorithms
-├── math/           # Mathematical algorithms
-└── README.md       # Language-specific documentation
+Algorithm/
+├── linked_list/           # Linked List Algorithms Module
+│   ├── reverse/          # Reversal Algorithms
+│   │   ├── cpp/          # C++ Implementation
+│   │   ├── rust/         # Rust Implementation  
+│   │   ├── go/           # Go Implementation
+│   │   ├── python/       # Python Implementation
+│   │   ├── typescript/   # TypeScript Implementation
+│   │   ├── lua/          # Lua Implementation
+│   │   └── README.md     # Reversal Algorithms Documentation
+│   ├── merge/            # Merge Algorithms (Planned)
+│   ├── two_pointers/     # Two Pointers Technique (Planned)
+│   ├── cycle_detection/  # Cycle Detection Algorithms (Planned)
+│   └── README.md         # Linked List Algorithms Overview
+├── sorting/              # Sorting Algorithms Module (Planned)
+├── graph/                # Graph Algorithms Module (Planned)
+├── dynamic_programming/  # Dynamic Programming Module (Planned)
+└── docs/                 # General Documentation and Learning Guides
+    └── linked_list_algorithms.md
 ```
+
+### Currently Implemented Algorithms
+
+#### 🔄 Linked List Reversal Algorithms
+- **Reverse Nodes in K-Group with Constraints** - Advanced version of K-group reversal
+  - Supported Languages: C++, Rust, Go, Python, TypeScript, Lua
+  - Difficulty: Hard
+  - Features: Includes threshold checking and separator insertion functionality
 
 ## Contributing
 
@@ -99,6 +118,26 @@ Contributions are welcome! Please follow these guidelines:
 3. Add test cases when possible
 4. Follow the coding conventions of each language
 5. Update relevant README files
+
+## Project File Management
+
+To keep the project clean, this project uses `.gitignore` to ignore the following types of generated files:
+
+### Automatically Ignored File Types
+- **Compiled Artifacts**: `*.exe`, `*.out`, `*.o`, `*.a`, etc.
+- **Build Directories**: 
+  - TypeScript: `dist/`, `node_modules/`
+  - Rust: `target/`, `Cargo.lock`
+  - Python: `__pycache__/`, `*.pyc`
+- **Dependency Lock Files**: `package-lock.json`, `yarn.lock`
+- **IDE Temporary Files**: Editor caches and temporary files
+- **System Files**: `.DS_Store`, `Thumbs.db`, etc.
+
+### Preserved Configuration Files
+- `.vscode/`: VS Code project configuration (debugging and build tasks)
+- Language configuration files: `package.json`, `tsconfig.json`, `Cargo.toml`, etc.
+
+This ensures that the repository contains only source code and necessary configuration files, maintaining code repository cleanliness.
 
 ## Learning Resources
 

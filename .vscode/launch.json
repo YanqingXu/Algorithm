@@ -5,10 +5,10 @@
             "name": "C++ Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/cpp/reverse_nodes_in_k_group_with_constraints/reverse_nodes_in_k_group_with_constraints.exe",
+            "program": "${workspaceFolder}/linked_list/reverse/cpp/reverse_k_group_with_constraints.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/cpp/reverse_nodes_in_k_group_with_constraints",
+            "cwd": "${workspaceFolder}/linked_list/reverse/cpp",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
@@ -20,28 +20,28 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C++: g++ build active file"
+            "preLaunchTask": "C++: g++ build reverse k group"
         },
         {
             "name": "Rust Debug",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/rust/reverse_nodes_in_k_group_with_constraints/target/debug/reverse_nodes_in_k_group_with_constraints",
+            "program": "${workspaceFolder}/linked_list/reverse/rust/target/debug/reverse_k_group_with_constraints",
             "args": [],
-            "cwd": "${workspaceFolder}/rust/reverse_nodes_in_k_group_with_constraints",
+            "cwd": "${workspaceFolder}/linked_list/reverse/rust",
             "stopOnEntry": false,
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb",
-            "preLaunchTask": "Rust: cargo build"
+            "preLaunchTask": "Rust: cargo run reverse k group"
         },
         {
             "name": "Go Debug",
             "type": "go",
             "request": "launch",
             "mode": "debug",
-            "program": "${workspaceFolder}/go/reverse_nodes_in_k_group_with_constraints",
-            "cwd": "${workspaceFolder}/go/reverse_nodes_in_k_group_with_constraints",
+            "program": "${workspaceFolder}/linked_list/reverse/go",
+            "cwd": "${workspaceFolder}/linked_list/reverse/go",
             "env": {},
             "args": [],
             "showLog": true
@@ -50,9 +50,9 @@
             "name": "Python Debug",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/python/reverse_nodes_in_k_group_with_constraints/reverse_nodes_in_k_group_with_constraints.py",
+            "program": "${workspaceFolder}/linked_list/reverse/python/reverse_k_group_with_constraints.py",
             "console": "integratedTerminal",
-            "cwd": "${workspaceFolder}/python/reverse_nodes_in_k_group_with_constraints",
+            "cwd": "${workspaceFolder}/linked_list/reverse/python",
             "args": [],
             "justMyCode": true
         },
@@ -60,38 +60,48 @@
             "name": "TypeScript Debug",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceFolder}/typescript/reverse_nodes_in_k_group_with_constraints/reverse_nodes_in_k_group_with_constraints.js",
-            "cwd": "${workspaceFolder}/typescript/reverse_nodes_in_k_group_with_constraints",
+            "program": "${workspaceFolder}/linked_list/reverse/typescript/dist/reverse_k_group_with_constraints.js",
+            "cwd": "${workspaceFolder}/linked_list/reverse/typescript",
             "args": [],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
-            "preLaunchTask": "TypeScript: tsc build"
+            "preLaunchTask": "TypeScript: tsc build reverse k group",
+            "sourceMaps": true,
+            "outFiles": [
+                "${workspaceFolder}/linked_list/reverse/typescript/dist/**/*.js"
+            ]
         },
         {
             "name": "TypeScript Debug (ts-node)",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceFolder}/node_modules/ts-node/dist/bin.js",
-            "args": [
-                "${workspaceFolder}/typescript/reverse_nodes_in_k_group_with_constraints/reverse_nodes_in_k_group_with_constraints.ts"
+            "program": "${workspaceFolder}/linked_list/reverse/typescript/reverse_k_group_with_constraints.ts",
+            "cwd": "${workspaceFolder}/linked_list/reverse/typescript",
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register"
             ],
-            "cwd": "${workspaceFolder}/typescript/reverse_nodes_in_k_group_with_constraints",
+            "args": [],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "env": {
-                "TS_NODE_PROJECT": "${workspaceFolder}/typescript/reverse_nodes_in_k_group_with_constraints/tsconfig.json"
-            }
+                "TS_NODE_PROJECT": "${workspaceFolder}/linked_list/reverse/typescript/tsconfig.json"
+            },
+            "sourceMaps": true,
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
         },
         {
             "name": "Lua Debug",
-            "type": "lua-local",
+            "type": "node",
             "request": "launch",
-            "program": {
-                "lua": "lua",
-                "file": "${workspaceFolder}/lua/reverse_nodes_in_k_group_with_constraints/reverse_nodes_in_k_group_with_constraints.lua"
-            },
-            "cwd": "${workspaceFolder}/lua/reverse_nodes_in_k_group_with_constraints",
-            "args": []
+            "program": "lua",
+            "args": [
+                "${workspaceFolder}/linked_list/reverse/lua/reverse_k_group_with_constraints.lua"
+            ],
+            "cwd": "${workspaceFolder}/linked_list/reverse/lua",
+            "console": "integratedTerminal"
         }
     ]
 }
