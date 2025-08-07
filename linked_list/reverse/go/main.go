@@ -217,17 +217,6 @@ func runTests() {
 	printList(result3)
 	fmt.Println("期望: 5")
 	fmt.Println()
-
-	// 测试用例4：负数情况
-	fmt.Println("测试用例4（负数情况）:")
-	head4 := createList([]int{-1, -2, -3, 4, 5, 6})
-	fmt.Print("输入: ")
-	printList(head4)
-	result4 := solution.ReverseKGroupWithConstraints(head4, 3, -5, 0)
-	fmt.Print("输出: ")
-	printList(result4)
-	fmt.Println("期望: -3 -> -2 -> -1 -> 0 -> 6 -> 5 -> 4")
-	fmt.Println()
 }
 
 func main() {

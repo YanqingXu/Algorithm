@@ -1,3 +1,0 @@
-module reverse_nodes_in_k_group_with_constraints
-
-go 1.21

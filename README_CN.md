@@ -77,18 +77,37 @@ python3 algorithm.py
 
 ## 仓库结构
 
-每个语言目录都遵循一致的结构：
+本仓库采用**算法分类主导**的组织结构，便于跨语言学习和对比：
 
 ```
-language_name/
-├── basic/          # 基础算法（排序、搜索）
-├── data_structures/ # 数据结构实现
-├── dynamic_programming/ # 动态规划问题和解决方案
-├── graph/          # 图算法
-├── string/         # 字符串操作算法
-├── math/           # 数学算法
-└── README.md       # 特定语言的文档
+Algorithm/
+├── linked_list/           # 链表算法模块
+│   ├── reverse/          # 反转类算法
+│   │   ├── cpp/          # C++实现
+│   │   ├── rust/         # Rust实现  
+│   │   ├── go/           # Go实现
+│   │   ├── python/       # Python实现
+│   │   ├── typescript/   # TypeScript实现
+│   │   ├── lua/          # Lua实现
+│   │   └── README.md     # 反转算法文档
+│   ├── merge/            # 合并类算法（计划中）
+│   ├── two_pointers/     # 双指针技巧（计划中）
+│   ├── cycle_detection/  # 环检测算法（计划中）
+│   └── README.md         # 链表算法总览
+├── sorting/              # 排序算法模块（计划中）
+├── graph/                # 图算法模块（计划中）
+├── dynamic_programming/  # 动态规划模块（计划中）
+└── docs/                 # 通用文档和学习指南
+    └── linked_list_algorithms.md
 ```
+
+### 当前已实现算法
+
+#### 🔄 链表反转算法
+- **K个一组反转链表（带约束条件）** - 高级版本的K个一组反转
+  - 支持语言：C++, Rust, Go, Python, TypeScript, Lua
+  - 难度：Hard
+  - 特色：增加了阈值判断和分隔符插入功能
 
 ## 贡献指南
 

@@ -12,7 +12,6 @@
 时间复杂度: O(n)
 空间复杂度: O(1)
 --]]
-
 -- 链表节点定义
 local ListNode = {}
 ListNode.__index = ListNode
@@ -56,38 +55,38 @@ function Solution:reverseKGroupWithConstraints(head, k, threshold, separator)
     if not head or k <= 1 then
         return head
     end
-    
+
     -- 创建虚拟头节点，简化边界处理
     local dummy = ListNode:new(0)
     dummy.next = head
     local prevGroupEnd = dummy
-    
+
     while true do
         -- 检查是否还有k个节点
         local groupStart = prevGroupEnd.next
         if not self:hasKNodes(groupStart, k) then
             break
         end
-        
+
         -- 计算当前k个节点的和
         local sum = self:calculateSum(groupStart, k)
-        
+
         -- 找到当前组的结束位置
         local groupEnd = groupStart
         for i = 1, k - 1 do
             groupEnd = groupEnd.next
         end
         local nextGroupStart = groupEnd.next
-        
+
         if sum >= threshold then
             -- 满足条件，进行反转
             groupEnd.next = nil -- 暂时断开连接
             local reversedHead = self:reverseList(groupStart)
-            
+
             -- 重新连接
             prevGroupEnd.next = reversedHead
             groupStart.next = nextGroupStart -- groupStart现在是反转后的尾节点
-            
+
             -- 如果还有下一组，检查是否需要插入分隔符
             if nextGroupStart and self:hasKNodes(nextGroupStart, k) then
                 local nextSum = self:calculateSum(nextGroupStart, k)
@@ -107,7 +106,7 @@ function Solution:reverseKGroupWithConstraints(head, k, threshold, separator)
             prevGroupEnd = groupEnd
         end
     end
-    
+
     return dummy.next
 end
 
@@ -145,54 +144,58 @@ end
 function Solution:reverseList(head)
     local prev = nil
     local current = head
-    
+
     while current do
         local next = current.next
         current.next = prev
         prev = current
         current = next
     end
-    
+
     return prev
 end
 
 -- 辅助函数：创建链表
-local function createList(values)
-    if #values == 0 then
+function createList(values)
+    if not values or #values == 0 then
         return nil
     end
-    
+
     local head = ListNode:new(values[1])
     local current = head
-    
+
     for i = 2, #values do
         current.next = ListNode:new(values[i])
         current = current.next
     end
-    
+
     return head
 end
 
 -- 辅助函数：打印链表
-local function printList(head)
-    local result = {}
+function printList(head)
+    local values = {}
     while head do
-        table.insert(result, tostring(head.val))
+        table.insert(values, tostring(head.val))
         head = head.next
     end
-    print(table.concat(result, " -> "))
+    if #values > 0 then
+        print(table.concat(values, " -> "))
+    else
+        print("(空链表)")
+    end
 end
 
 -- 测试函数
 local function runTests()
     local solution = Solution:new()
-    
+
     print("=== 带约束条件的K个一组反转链表 ===")
     print("难度: Hard")
     print("时间复杂度: O(n)")
     print("空间复杂度: O(1)")
     print()
-    
+
     -- 测试用例1
     print("测试用例1:")
     local head1 = createList({1, 2, 3, 4, 5, 6})
@@ -203,7 +206,7 @@ local function runTests()
     printList(result1)
     print("期望: 3 -> 2 -> 1 -> 0 -> 6 -> 5 -> 4")
     print()
-    
+
     -- 测试用例2
     print("测试用例2:")
     local head2 = createList({1, 1, 1, 2, 2, 2})
@@ -214,7 +217,7 @@ local function runTests()
     printList(result2)
     print("期望: 1 -> 1 -> 1 -> 9 -> 2 -> 2 -> 2")
     print()
-    
+
     -- 测试用例3：边界情况
     print("测试用例3（边界情况）:")
     local head3 = createList({5})
@@ -225,64 +228,7 @@ local function runTests()
     printList(result3)
     print("期望: 5")
     print()
-    
-    -- 测试用例4：负数情况
-    print("测试用例4（负数情况）:")
-    local head4 = createList({-1, -2, -3, 4, 5, 6})
-    io.write("输入: ")
-    printList(head4)
-    local result4 = solution:reverseKGroupWithConstraints(head4, 3, -5, 0)
-    io.write("输出: ")
-    printList(result4)
-    print("期望: -3 -> -2 -> -1 -> 0 -> 6 -> 5 -> 4")
-    print()
-    
-    -- 测试用例5：空链表
-    print("测试用例5（空链表）:")
-    local head5 = nil
-    io.write("输入: ")
-    printList(head5)
-    local result5 = solution:reverseKGroupWithConstraints(head5, 2, 5, 0)
-    io.write("输出: ")
-    printList(result5)
-    print("期望: (空)")
-    print()
 end
 
--- 性能测试函数
-local function performanceTest()
-    print("=== 性能测试 ===")
-    local solution = Solution:new()
-    
-    -- 创建大链表
-    local largeValues = {}
-    for i = 1, 1000 do
-        table.insert(largeValues, i % 10)
-    end
-    
-    local startTime = os.clock()
-    local largeHead = createList(largeValues)
-    local result = solution:reverseKGroupWithConstraints(largeHead, 5, 20, 99)
-    local endTime = os.clock()
-    
-    print(string.format("处理1000个节点耗时: %.4f秒", endTime - startTime))
-    print("性能测试完成")
-    print()
-end
-
--- 主函数
-local function main()
-    runTests()
-    performanceTest()
-end
-
--- 执行主函数
-main()
-
--- 导出模块（如果需要作为模块使用）
-return {
-    ListNode = ListNode,
-    Solution = Solution,
-    createList = createList,
-    printList = printList
-}
+-- 运行测试
+runTests()

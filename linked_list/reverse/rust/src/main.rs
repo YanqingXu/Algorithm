@@ -13,9 +13,6 @@
 空间复杂度: O(1)
 */
 
-use std::rc::Rc;
-use std::cell::RefCell;
-
 // 链表节点定义
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
@@ -35,14 +32,14 @@ struct Solution;
 impl Solution {
     /**
      * 带约束条件的K个一组反转链表
-     * 
+     *
      * 算法思路：
      * 1. 使用递归方法处理每一组k个节点
      * 2. 对于每一组，先检查节点数是否足够
      * 3. 计算当前组节点值的和，判断是否满足阈值条件
      * 4. 如果满足条件，反转当前组并递归处理剩余部分
      * 5. 在需要的地方插入分隔符节点
-     * 
+     *
      * @param head 链表头节点
      * @param k 每组节点数
      * @param threshold 阈值
@@ -58,7 +55,7 @@ impl Solution {
         if head.is_none() || k <= 1 {
             return head;
         }
-        
+
         // 检查是否有足够的k个节点
         let mut count = 0;
         let mut current = &head;
@@ -69,23 +66,22 @@ impl Solution {
             }
             current = &node.next;
         }
-        
+
         if count < k {
             return head;
         }
-        
+
         // 计算当前k个节点的和
         let sum = Self::calculate_sum(&head, k);
-        
+
         if sum >= threshold {
             // 满足条件，进行反转
             let (reversed_head, remaining) = Self::reverse_k_nodes(head, k);
-            
+
             // 递归处理剩余部分
-            let next_processed = Self::reverse_k_group_with_constraints(
-                remaining, k, threshold, separator
-            );
-            
+            let next_processed =
+                Self::reverse_k_group_with_constraints(remaining, k, threshold, separator);
+
             // 检查是否需要插入分隔符
             if next_processed.is_some() {
                 let next_sum = Self::calculate_sum(&next_processed, k);
@@ -103,13 +99,12 @@ impl Solution {
         } else {
             // 不满足条件，不反转，继续处理下一组
             let (current_group, remaining) = Self::split_k_nodes(head, k);
-            let next_processed = Self::reverse_k_group_with_constraints(
-                remaining, k, threshold, separator
-            );
+            let next_processed =
+                Self::reverse_k_group_with_constraints(remaining, k, threshold, separator);
             Self::connect_tail(current_group, next_processed)
         }
     }
-    
+
     /**
      * 检查是否有k个节点
      */
@@ -125,7 +120,7 @@ impl Solution {
         }
         false
     }
-    
+
     /**
      * 计算前k个节点的值的和
      */
@@ -133,7 +128,7 @@ impl Solution {
         let mut sum = 0;
         let mut count = 0;
         let mut current = head;
-        
+
         while let Some(node) = current {
             if count >= k {
                 break;
@@ -142,10 +137,10 @@ impl Solution {
             count += 1;
             current = &node.next;
         }
-        
+
         sum
     }
-    
+
     /**
      * 反转前k个节点
      */
@@ -157,7 +152,7 @@ impl Solution {
         let reversed = Self::reverse_list(group);
         (reversed, remaining)
     }
-    
+
     /**
      * 分离前k个节点
      */
@@ -168,7 +163,7 @@ impl Solution {
         if k <= 0 {
             return (None, head);
         }
-        
+
         let mut current = &mut head;
         for _ in 0..k - 1 {
             if let Some(node) = current {
@@ -177,7 +172,7 @@ impl Solution {
                 return (head, None);
             }
         }
-        
+
         if let Some(node) = current {
             let remaining = node.next.take();
             (head, remaining)
@@ -185,23 +180,23 @@ impl Solution {
             (head, None)
         }
     }
-    
+
     /**
      * 反转链表
      */
     fn reverse_list(mut head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         let mut prev = None;
-        
+
         while let Some(mut node) = head {
             let next = node.next.take();
             node.next = prev;
             prev = Some(node);
             head = next;
         }
-        
+
         prev
     }
-    
+
     /**
      * 连接链表尾部
      */
@@ -212,7 +207,7 @@ impl Solution {
         if head.is_none() {
             return tail;
         }
-        
+
         let mut current = &mut head;
         while let Some(node) = current {
             if node.next.is_none() {
@@ -221,7 +216,7 @@ impl Solution {
             }
             current = &mut node.next;
         }
-        
+
         head
     }
 }
@@ -231,17 +226,17 @@ fn create_list(values: Vec<i32>) -> Option<Box<ListNode>> {
     if values.is_empty() {
         return None;
     }
-    
+
     let mut head = Some(Box::new(ListNode::new(values[0])));
     let mut current = &mut head;
-    
+
     for &val in values.iter().skip(1) {
         if let Some(node) = current {
             node.next = Some(Box::new(ListNode::new(val)));
             current = &mut node.next;
         }
     }
-    
+
     head
 }
 
@@ -249,7 +244,7 @@ fn create_list(values: Vec<i32>) -> Option<Box<ListNode>> {
 fn print_list(head: &Option<Box<ListNode>>) {
     let mut current = head;
     let mut first = true;
-    
+
     while let Some(node) = current {
         if !first {
             print!(" -> ");
@@ -268,7 +263,7 @@ fn run_tests() {
     println!("时间复杂度: O(n)");
     println!("空间复杂度: O(1)");
     println!();
-    
+
     // 测试用例1
     println!("测试用例1:");
     let head1 = create_list(vec![1, 2, 3, 4, 5, 6]);
@@ -279,7 +274,7 @@ fn run_tests() {
     print_list(&result1);
     println!("期望: 3 -> 2 -> 1 -> 0 -> 6 -> 5 -> 4");
     println!();
-    
+
     // 测试用例2
     println!("测试用例2:");
     let head2 = create_list(vec![1, 1, 1, 2, 2, 2]);
@@ -290,7 +285,7 @@ fn run_tests() {
     print_list(&result2);
     println!("期望: 1 -> 1 -> 1 -> 9 -> 2 -> 2 -> 2");
     println!();
-    
+
     // 测试用例3：边界情况
     println!("测试用例3（边界情况）:");
     let head3 = create_list(vec![5]);
@@ -310,7 +305,7 @@ fn main() {
 #[cfg(test)]
 mod tests {
     use super::*;
-    
+
     #[test]
     fn test_basic_case() {
         let head = create_list(vec![1, 2, 3, 4, 5, 6]);
@@ -318,7 +313,7 @@ mod tests {
         // 验证结果的正确性
         assert!(result.is_some());
     }
-    
+
     #[test]
     fn test_threshold_not_met() {
         let head = create_list(vec![1, 1, 1, 2, 2, 2]);
@@ -326,7 +321,7 @@ mod tests {
         // 验证结果的正确性
         assert!(result.is_some());
     }
-    
+
     #[test]
     fn test_single_node() {
         let head = create_list(vec![5]);

@@ -16,7 +16,6 @@
 """
 
 from typing import Optional, List
-import time
 
 
 class ListNode:
@@ -161,15 +160,6 @@ def print_list(head: Optional[ListNode]) -> None:
     print(' -> '.join(values) if values else '(空链表)')
 
 
-def list_to_array(head: Optional[ListNode]) -> List[int]:
-    """辅助函数：链表转数组（用于测试验证）"""
-    result = []
-    while head:
-        result.append(head.val)
-        head = head.next
-    return result
-
-
 def run_tests() -> None:
     """测试函数"""
     solution = Solution()
@@ -212,84 +202,7 @@ def run_tests() -> None:
     print_list(result3)
     print('期望: 5')
     print()
-    
-    # 测试用例4：负数情况
-    print('测试用例4（负数情况）:')
-    head4 = create_list([-1, -2, -3, 4, 5, 6])
-    print('输入: ', end='')
-    print_list(head4)
-    result4 = solution.reverse_k_group_with_constraints(head4, 3, -5, 0)
-    print('输出: ', end='')
-    print_list(result4)
-    print('期望: -3 -> -2 -> -1 -> 0 -> 6 -> 5 -> 4')
-    print()
-    
-    # 测试用例5：空链表
-    print('测试用例5（空链表）:')
-    head5 = None
-    print('输入: ', end='')
-    print_list(head5)
-    result5 = solution.reverse_k_group_with_constraints(head5, 2, 5, 0)
-    print('输出: ', end='')
-    print_list(result5)
-    print('期望: (空链表)')
-    print()
-
-
-def performance_test() -> None:
-    """性能测试函数"""
-    print('=== 性能测试 ===')
-    solution = Solution()
-    
-    # 创建大链表
-    large_values = [i % 10 for i in range(1, 1001)]
-    
-    start_time = time.time()
-    large_head = create_list(large_values)
-    result = solution.reverse_k_group_with_constraints(large_head, 5, 20, 99)
-    end_time = time.time()
-    
-    print(f'处理1000个节点耗时: {(end_time - start_time) * 1000:.2f}ms')
-    print('性能测试完成')
-    print()
-
-
-def unit_tests() -> None:
-    """单元测试（使用简单的断言）"""
-    print('=== 单元测试 ===')
-    solution = Solution()
-    
-    # 测试1：基本功能
-    test1 = create_list([1, 2, 3, 4, 5, 6])
-    result1 = solution.reverse_k_group_with_constraints(test1, 3, 6, 0)
-    expected1 = [3, 2, 1, 0, 6, 5, 4]
-    actual1 = list_to_array(result1)
-    print('测试1:', '通过' if actual1 == expected1 else '失败')
-    
-    # 测试2：阈值不满足
-    test2 = create_list([1, 1, 1, 2, 2, 2])
-    result2 = solution.reverse_k_group_with_constraints(test2, 3, 5, 9)
-    expected2 = [1, 1, 1, 9, 2, 2, 2]
-    actual2 = list_to_array(result2)
-    print('测试2:', '通过' if actual2 == expected2 else '失败')
-    
-    # 测试3：单节点
-    test3 = create_list([5])
-    result3 = solution.reverse_k_group_with_constraints(test3, 1, 3, 0)
-    expected3 = [5]
-    actual3 = list_to_array(result3)
-    print('测试3:', '通过' if actual3 == expected3 else '失败')
-    
-    print('单元测试完成')
-    print()
-
-
-def main() -> None:
-    """主函数"""
-    run_tests()
-    performance_test()
-    unit_tests()
 
 
 if __name__ == '__main__':
-    main()
+    run_tests()

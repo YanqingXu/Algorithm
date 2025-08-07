@@ -59,7 +59,7 @@
                 "build"
             ],
             "options": {
-                "cwd": "${workspaceFolder}/rust/reverse_nodes_in_k_group_with_constraints"
+                "cwd": "${workspaceFolder}/linked_list/reverse/rust"
             },
             "group": {
                 "kind": "build",
@@ -68,7 +68,7 @@
             "problemMatcher": [
                 "$rustc"
             ],
-            "detail": "Rust cargo build"
+            "detail": "Rust cargo build - linked_list/reverse"
         },
         {
             "label": "Rust: cargo run",
@@ -78,7 +78,7 @@
                 "run"
             ],
             "options": {
-                "cwd": "${workspaceFolder}/rust/reverse_nodes_in_k_group_with_constraints"
+                "cwd": "${workspaceFolder}/linked_list/reverse/rust"
             },
             "group": {
                 "kind": "test",
@@ -87,7 +87,7 @@
             "problemMatcher": [
                 "$rustc"
             ],
-            "detail": "Rust cargo run"
+            "detail": "Rust cargo run - linked_list/reverse"
         },
         {
             "label": "Go: build",
@@ -99,7 +99,7 @@
                 "."
             ],
             "options": {
-                "cwd": "${workspaceFolder}/go/reverse_nodes_in_k_group_with_constraints"
+                "cwd": "${workspaceFolder}/linked_list/reverse/go"
             },
             "group": {
                 "kind": "build",
@@ -108,7 +108,7 @@
             "problemMatcher": [
                 "$go"
             ],
-            "detail": "Go build"
+            "detail": "Go build - linked_list/reverse"
         },
         {
             "label": "Go: run",
@@ -119,7 +119,7 @@
                 "."
             ],
             "options": {
-                "cwd": "${workspaceFolder}/go/reverse_nodes_in_k_group_with_constraints"
+                "cwd": "${workspaceFolder}/linked_list/reverse/go"
             },
             "group": {
                 "kind": "test",
@@ -128,7 +128,7 @@
             "problemMatcher": [
                 "$go"
             ],
-            "detail": "Go run"
+            "detail": "Go run - linked_list/reverse"
         },
         {
             "label": "TypeScript: tsc build",
