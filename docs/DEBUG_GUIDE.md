@@ -122,15 +122,6 @@ npm install -g typescript ts-node
 - 使用 ts-node 直接运行 TypeScript
 - 适合开发环境调试
 
-### 6. Lua 调试配置
-
-**配置名称**: `Lua Debug`
-
-- **解释器**: lua
-- **调试器**: lua-local
-
-**注意**: 需要安装 Lua Debug 扩展
-
 ## 🚀 使用方法
 
 ### 快速开始

@@ -1,0 +1,10 @@
+{
+  "name": "merge-k-sorted-lists",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "ts-node": "^10.9.2"
+  }
+}

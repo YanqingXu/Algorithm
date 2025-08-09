@@ -235,6 +235,181 @@
             },
             "problemMatcher": [],
             "detail": "Run Lua with LuaPanda debugger"
+        },
+        // ----------------- MERGE MODULE TASKS -----------------
+        {
+            "label": "C++: g++ build merge k sorted lists",
+            "type": "cppbuild",
+            "command": "g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "-O0",
+                "-std=c++17",
+                "-Wall",
+                "-Wextra",
+                "${workspaceFolder}/linked_list/merge/cpp/merge_k_sorted_lists.cpp",
+                "-o",
+                "${workspaceFolder}/linked_list/merge/cpp/merge_k_sorted_lists.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/linked_list/merge/cpp"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "Build Merge K Sorted Lists (C++)"
+        },
+        {
+            "label": "Rust: cargo build - merge",
+            "type": "shell",
+            "command": "cargo",
+            "args": [
+                "build"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/linked_list/merge/rust"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "detail": "Rust cargo build - linked_list/merge"
+        },
+        {
+            "label": "Rust: cargo run - merge",
+            "type": "shell",
+            "command": "cargo",
+            "args": [
+                "run"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/linked_list/merge/rust"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$rustc"
+            ],
+            "detail": "Rust cargo run - linked_list/merge"
+        },
+        {
+            "label": "Go: build - merge",
+            "type": "shell",
+            "command": "go",
+            "args": [
+                "build",
+                "-v",
+                "."
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/linked_list/merge/go"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$go"
+            ],
+            "detail": "Go build - linked_list/merge"
+        },
+        {
+            "label": "Go: run - merge",
+            "type": "shell",
+            "command": "go",
+            "args": [
+                "run",
+                "."
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/linked_list/merge/go"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$go"
+            ],
+            "detail": "Go run - linked_list/merge"
+        },
+        {
+            "label": "TypeScript: ts-node run merge k lists",
+            "type": "shell",
+            "command": "npx",
+            "args": [
+                "ts-node",
+                "merge_k_sorted_lists.ts"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/linked_list/merge/typescript"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            },
+            "detail": "Run Merge K Lists - TypeScript (ts-node)"
+        },
+        {
+            "label": "Python: run merge script",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "merge_k_sorted_lists.py"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/linked_list/merge/python"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            },
+            "problemMatcher": [],
+            "detail": "Run Merge K Lists - Python"
+        },
+        {
+            "label": "Lua: run merge script",
+            "type": "shell",
+            "command": "lua",
+            "args": [
+                "merge_k_sorted_lists.lua"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/linked_list/merge/lua"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            },
+            "problemMatcher": [],
+            "detail": "Run Merge K Lists - Lua"
+        },
+        {
+            "label": "LuaPanda: run merge with debug",
+            "type": "shell",
+            "command": "lua",
+            "args": [
+                "${workspaceFolder}/linked_list/merge/lua/merge_k_sorted_lists_with_luapanda.lua"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/linked_list/merge/lua"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": false
+            },
+            "problemMatcher": [],
+            "detail": "Run Merge K Lists with LuaPanda debugger"
         }
     ]
 }

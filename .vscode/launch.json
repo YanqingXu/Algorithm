@@ -26,11 +26,11 @@
             "name": "Rust Debug",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/linked_list/reverse/rust/target/debug/main.exe",
+            "program": "${workspaceFolder}/linked_list/merge/rust/target/debug/main.exe",
             "args": [],
-            "cwd": "${workspaceFolder}/linked_list/reverse/rust",
+            "cwd": "${workspaceFolder}/linked_list/merge/rust",
             "stopOnEntry": false,
-            "preLaunchTask": "Rust: cargo build reverse k group"
+            "preLaunchTask": "Rust: cargo build merge k group"
         },
         {
             "name": "Go Debug",
@@ -100,6 +100,79 @@
             "connectionPort": 8820,
             "stopOnEntry": true,
             "useCHook": true
+        },
+        // ----------------- MERGE MODULE DEBUG -----------------
+        {
+            "name": "C++ Debug (merge)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/linked_list/merge/cpp/merge_k_sorted_lists.exe",
+            "args": [],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}/linked_list/merge/cpp",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "logging": { "engineLogging": true, "trace": true, "traceResponse": true },
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C++: g++ build merge k sorted lists"
+        },
+        {
+            "name": "Rust Debug (merge)",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/linked_list/merge/rust/target/debug/merge_k_sorted_lists.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}/linked_list/merge/rust",
+            "stopOnEntry": false,
+            "preLaunchTask": "Rust: cargo build - merge"
+        },
+        {
+            "name": "Go Debug (merge)",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/linked_list/merge/go",
+            "cwd": "${workspaceFolder}/linked_list/merge/go",
+            "env": {},
+            "args": [],
+            "showLog": true
+        },
+        {
+            "name": "Python Debug (merge)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/linked_list/merge/python/merge_k_sorted_lists.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/linked_list/merge/python"
+        },
+        {
+            "name": "TypeScript Debug (ts-node, merge)",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/linked_list/merge/typescript/merge_k_sorted_lists.ts",
+            "cwd": "${workspaceFolder}/linked_list/merge/typescript",
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register"
+            ],
+            "args": [],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "env": {
+                "TS_NODE_PROJECT": "${workspaceFolder}/linked_list/merge/typescript/tsconfig.json"
+            },
+            "sourceMaps": true,
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
         }
     ]
 }

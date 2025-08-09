@@ -24,10 +24,6 @@
         "rust-lang.rust-analyzer",
         "vadimcn.vscode-lldb",
         
-        // Lua 开发
-        "sumneko.lua",
-        "actboy168.lua-debug",
-        
         // 通用开发工具
         "ms-vscode.vscode-json",
         "redhat.vscode-yaml",
